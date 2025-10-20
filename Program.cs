@@ -1,4 +1,5 @@
-using Microsoft.AspNetCore.OpenApi; // Needed for AddOpenApi and MapOpenApi
+using Microsoft.AspNetCore.OpenApi;
+using Microsoft.EntityFrameworkCore; // Needed for AddOpenApi and MapOpenApi
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,12 @@ const string AllowAllPolicy = "AllowAll";
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString)
+);
 
 builder.Services.AddCors(options =>
 {
