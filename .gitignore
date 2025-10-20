@@ -1,0 +1,38 @@
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## VS Code settings
+.vscode/
+.history/
+
+## Rider settings
+.idea/
+
+## Logs
+*.log
+
+## OS generated files
+.DS_Store
+Thumbs.db
+
+## ASP.NET stuff
+appsettings.*.json
+*.db
+*.mdf
+*.ldf
+
+## dotnet watch
+**/generated/
